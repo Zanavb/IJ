@@ -2,4 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.logo {
+    background-image: url(./assets/LOGO/LOGO.png);
+}
