@@ -7,7 +7,7 @@ const footer = () => {
       <div className="">
         <p>
           © 1900 Rederijkerskamer Iverige Jonckheyt - Camere van Rhetorica -
-          Sint-Amandsberg - Koninklijke toneelvereniging in trouw verbond
+          Sint-Amandsberg - Koninklijke toneelvereniging In Trouw Verbond
         </p>
         <a
           className="text-sky-700 hover:underline duration-200"

@@ -1,18 +1,25 @@
 import React from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/LOGO/LOGO.png";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
-  let Links = [
-    { name: "Producties", link: "/Producties.js" },
-    { name: "Reservaties", link: "/Reservaties.js" },
-    { name: "Over Ons", link: "/OverOns.js" },
-    { name: "Praktisch", link: "/Praktisch.js" },
-    { name: "Contact", link: "/Contact.js" },
+  const Links = [
+    { name: "Producties", link: "/Producties" },
+    { name: "Reservaties", link: "/Reservaties" },
+    { name: "Over Ons", link: "/OverOns" },
+    { name: "Praktisch", link: "/Praktisch" },
+    { name: "Contact", link: "/Contact" },
   ];
 
-  let [open, setOpen] = useState(false);
+  const location = useLocation();
+  const [activeLink, setActiveLink] = useState(location.pathname); // Update initial value
+
+  useEffect(() => {
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
+
+  const [open, setOpen] = useState(false);
 
   return (
     <header className="">
@@ -41,10 +48,15 @@ const Header = () => {
           >
             {Links.map((link) => (
               <li key={link.name} className="md:ml-8 text-xl md:my-0 my-8">
-                <Link to={link.name}>
+                <Link to={link.link}>
                   <a
                     href={link.link}
-                    className="hover:text-orange-500 duration-300"
+                    className={`hover:text-orange-500 duration-300 ${
+                      activeLink === link.link || activeLink === link.name
+                        ? "text-orange-500"
+                        : ""
+                    }`}
+                    onClick={() => setActiveLink(link.link)}
                   >
                     {link.name}
                   </a>
