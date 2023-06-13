@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/LOGO/LOGO_LIGGEND.png";
+import ImageSlider from "./imageSlider";
 
 const home = () => {
   return (
@@ -11,6 +12,7 @@ const home = () => {
         <img src={Logo} alt="" />
       </div>
       <div className="text-center text-4xl text-sky-700 font-Rubik font-extrabold pt-10"></div>
+      <ImageSlider />
     </div>
   );
 };

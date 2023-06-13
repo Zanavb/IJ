@@ -3,12 +3,12 @@ import "./App.css";
 import Header from "./components/header.js";
 import Home from "./components/Home.js";
 import Footer from "./components/footer.js";
+import Praktisch from "./components/Praktisch.js";
+import Overons from "./components/OverOns.js";
+import Contact from "./components/Contact.js";
+import Producties from "./components/Producties.js";
+import Reservaties from "./components/Reservaties.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Praktisch from "./components/Praktisch";
-import Overons from "./components/OverOns";
-import Contact from "./components/Contact";
-import Producties from "./components/Producties";
-import Reservaties from "./components/Reservaties";
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
               }
             ></Route>
             <Route path="Praktisch" element={<Praktisch />}></Route>
-            <Route path="Over Ons" element={<Overons />}></Route>
+            <Route path="OverOns" element={<Overons />}></Route>
             <Route path="Contact" element={<Contact />}></Route>
             <Route path="Producties" element={<Producties />}></Route>
             <Route path="Reservaties" element={<Reservaties />}></Route>
